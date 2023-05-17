@@ -14,13 +14,23 @@ size = Vector2(128, 128)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(576, 288)
 script = ExtResource("1_8vcrx")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_pgg6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_elmsl")
+
+[node name="MarkerPivot" type="Marker2D" parent="CharacterBody2D"]
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/MarkerPivot"]
+position = Vector2(96, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/MarkerPivot/Marker2D"]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_pgg6i")
 
 [node name="WALLS" type="Node" parent="."]
 
